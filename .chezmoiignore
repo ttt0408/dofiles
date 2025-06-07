@@ -4,6 +4,7 @@ README.md
 **/.git/
 **/.git/**
 **/.gitignore
+**/.DS_Store
 !.config/nvim/.gitignore
 
 .config/nvim/lazyvim.json
