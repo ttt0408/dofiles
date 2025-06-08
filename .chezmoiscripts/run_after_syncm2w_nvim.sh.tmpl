@@ -1,0 +1,14 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# 定义源目录和目标目录
+SOURCE_DIR="$HOME/.local/share/chezmoi/dot_config/nvim"
+TARGET_DIR="$HOME/.local/share/chezmoi/AppData/Local/nvim"
+
+# 打印同步信息
+echo "Sync from MacOS to Windows."
+
+# 使用 rsync 复制源目录到目标目录
+rsync -a "$SOURCE_DIR/" "$TARGET_DIR/"
+rsync -a "$HOME/.config/nvim/" "$HOME/.local/share/chezmoi/.chezmoitemplates/nvim/"
+{{- end }}
