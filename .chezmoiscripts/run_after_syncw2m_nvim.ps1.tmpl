@@ -1,0 +1,16 @@
+# Only run on Windows
+{{- if eq .chezmoi.os "windows" -}}
+
+# 定义源目录和目标目录
+$SOURCE_DIR = "$HOME\.local\share\chezmoi\AppData\Local\nvim"
+$TARGET_DIR = "$HOME\.local\share\chezmoi\.config\nvim"
+
+# 检查源目录是否存在
+if (Test-Path $SOURCE_DIR) {
+    # 使用 robocopy 复制源目录到目标目录
+    Write-Host "Sync from Windows to MacOS."
+    robocopy "$SOURCE_DIR" "$TARGET_DIR" /E
+    robocopy "$HOME\.config\nvim" "$HOME\.local\share\chezmoi\.chezmoitemplates\nvim" /E
+} else {
+    Write-Host "Source directory $SOURCE_DIR does not exist."
+}
