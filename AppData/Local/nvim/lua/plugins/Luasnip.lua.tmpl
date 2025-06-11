@@ -1,0 +1,23 @@
+return {
+  "L3MON4D3/LuaSnip",
+  lazy = false,
+  config = function()
+    require("luasnip").config.setup({
+      update_events = "TextChanged,TextChangedI",
+      enable_autosnippets = true,
+      store_selection_keys = "<Tab>",
+      snip_env = {
+        events = require("luasnip.util.events"),
+        ai = require("luasnip.nodes.absolute_indexer"),
+        extras = require("luasnip.extras"),
+        m = require("luasnip.extras").m,
+        l = require("luasnip.extras").l,
+        postfix = require("luasnip.extras.postfix").postfix,
+        GREEK = "alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega",
+      },
+    })
+    require("luasnip.loaders.from_lua").load({
+      paths = { "./snippets/" },
+    })
+  end,
+}
