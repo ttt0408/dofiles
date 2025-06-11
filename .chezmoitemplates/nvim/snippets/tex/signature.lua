@@ -71,16 +71,18 @@ return {
 
   s({
     trig = "gg",
-    wordTrig = false,
+    wordTrig = true,
     snippetType = "autosnippet",
+    priority = 10,
   }, {
     t("\\gamma"),
   }, { condition = tex_utils.in_mathzone }),
 
   s({
     trig = "GG",
-    wordTrig = false,
+    wordTrig = true,
     snippetType = "autosnippet",
+    priority = 10,
   }, {
     t("\\Gamma"),
   }, { condition = tex_utils.in_mathzone }),

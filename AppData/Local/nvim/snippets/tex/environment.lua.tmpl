@@ -86,9 +86,9 @@ return {
     { trig = "eq", wordTrig = true, priority = 50, dscr = "Expands 'eq' into an equation environment" },
     fmta(
       [[
-        \begin{equation*}
+        \begin{equation}
             <>
-        \end{equation*}
+        \end{equation}
       ]],
       { i(1) }
     )
@@ -98,6 +98,7 @@ return {
       trig = "bgad",
       wordTrig = true,
       snippetType = "autosnippet",
+      priority = 100,
     },
     fmta(
       [[ 
@@ -114,6 +115,7 @@ return {
       trig = "bggd",
       wordTrig = true,
       snippetType = "autosnippet",
+      priority = 100,
     },
     fmta(
       [[
