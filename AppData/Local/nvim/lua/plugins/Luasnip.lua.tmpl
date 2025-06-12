@@ -1,6 +1,9 @@
+--local IN_WINDOWS = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
 return {
   "L3MON4D3/LuaSnip",
   lazy = false,
+  --build = IN_WINDOWS and "make install_jsregexp" or "make install_jsregexp",
+  build = "make install_jsregexp",
   config = function()
     require("luasnip").config.setup({
       update_events = "TextChanged,TextChangedI",

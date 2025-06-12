@@ -4,6 +4,7 @@ README.md
 **/.git/
 **/.git/**
 **/.gitignore
+**/.gitattributes
 **/.DS_Store
 !.config/nvim/.gitignore
 
